@@ -13,7 +13,7 @@ const SearchBar = () => {
 const styles = StyleSheet.create({
     backgroundStyle:{
         backgroundColor: "#F0EEEE",
-        height: 50px,
+        height: 50,
         borderRadius: 6,
         marginHorizontal: 17,
         flexDirection: "row",
@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
         borderColor :'black',
         borderWidth: 1,
         flex:1,
+        fontSize:18,  
     }
 });
 export default SearchBar;
