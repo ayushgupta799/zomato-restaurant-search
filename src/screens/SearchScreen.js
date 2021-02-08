@@ -7,14 +7,25 @@ import zomato from "../api/zomato";
 const SearchScreen = () => {
     const [term, setTerm] = useState('');
     const [results, setResults] = useState([]);
+    
+    const searchApi = async () => {
+        const response = await yelp.get('/search',{
+            params:{
+                limit:5,
+                term,
+                location : 'noida'
+            }
+        });
+    };
+
     return <View>
         <SearchBar 
         term={term} 
-        onTermChange=  {newTerm => setTerm(newTerm)}
-        onTermSubmit={() => console.log("hoooooooe")} 
+        onTermChange=  {setTerm}
+        onTermSubmit={searchApi} 
         />
         <Text>SearchScreen</Text>
-        <Text>{term}</Text>
+        <Text>We have found {results.length} results</Text>
     </View>
 };
 
