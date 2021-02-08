@@ -28,7 +28,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Business Search" component={SearchScreen} />
+        <Stack.Screen name="Restaurant Search" component={SearchScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
