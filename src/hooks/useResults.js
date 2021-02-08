@@ -7,7 +7,12 @@ export default () => {
 
     const searchApi = async (searchTerm) => {
         try {
-            const response = await zomato.get('/search?entity_id=4&entity_type=city&q='+searchTerm);
+            const response = await zomato.get('/search?entity_id=4&entity_type=city',{
+                params: {
+                    count : 10,
+                    q : searchTerm
+                }
+            });
             setResults(response.data.restaurants);
         } catch (err){
             setErrorMessage('Something went wrong');

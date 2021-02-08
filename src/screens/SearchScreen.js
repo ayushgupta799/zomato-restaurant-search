@@ -1,24 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Text, StyleSheet, View} from 'react-native';
 import SearchBar from "../components/SearchBar";
-// import zomato from "../api/zomato";
 import useResults from '../hooks/useResults';
-
+import ResultsList from "../components/ResultsList";
 
 const SearchScreen = () => {
     const [term, setTerm] = useState('');
-    // const [results, setResults] = useState([]);
-    
-    // const searchApi = async () => {
-    //     const response = await yelp.get('/search',{
-    //         params:{
-    //             count:5,
-    //             q : term,
-    //             location : 'noida'
-    //         }
-    //     });
-    // };
-
     const [searchApi , results, errorMessage] = useResults();
 
     return <View>
@@ -27,9 +14,11 @@ const SearchScreen = () => {
             onTermChange=  {setTerm}
             onTermSubmit={() => searchApi(term)} 
         />
-        <Text>SearchScreen</Text>
         {errorMessage ? <Text>{errorMessage}</Text>: null}
         <Text>We have found {results.length} results</Text>
+        <ResultsList title="Oh you just want food"/>
+        <ResultsList title="you got some taste now"/>
+        <ResultsList title="someone knows what to buy with money"/>
     </View>
 };
 

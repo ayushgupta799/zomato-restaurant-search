@@ -28,7 +28,8 @@ const styles = StyleSheet.create({
     },
     inputStyle:{
         flex:1,
-        fontSize:18,  
+        fontSize:18,
+        padding:10
     },
     iconStyle:{
         fontSize:35,
