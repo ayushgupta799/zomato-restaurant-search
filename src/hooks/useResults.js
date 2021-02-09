@@ -9,7 +9,7 @@ export default () => {
         try {
             const response = await zomato.get('/search?entity_id=4&entity_type=city',{
                 params: {
-                    count : 10,
+                    count : 20,
                     q : searchTerm
                 }
             });

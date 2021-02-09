@@ -21,6 +21,7 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import SearchScreen from "./src/screens/SearchScreen";
+import ResultsShowScreen from './src/screens/ResultsShowScreen';
 
 const Stack = createStackNavigator();
 
@@ -29,6 +30,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Restaurant Search" component={SearchScreen} />
+        <Stack.Screen name="Results Show" component={ResultsShowScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
