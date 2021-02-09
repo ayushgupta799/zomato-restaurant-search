@@ -38,6 +38,8 @@ const styles = StyleSheet.create({
         padding: 10
     },
     scroll:{
+        marginHorizontal:10,
+        borderRadius:5,
         backgroundColor:'#C0C0C0'
     }
 });
