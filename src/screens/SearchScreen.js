@@ -18,18 +18,27 @@ const SearchScreen = () => {
         <SearchBar 
             term={term} 
             onTermChange=  {setTerm}
-            onTermSubmit={() => searchApi(term)} 
+            onTermSubmit={searchApi(term)} 
         />
         {errorMessage ? <Text>{errorMessage}</Text>: null}
-        <Text>We have found {results.length} results</Text>
-        <ScrollView>
-            <ResultsList results={filterResultByPrice(1)} title="Oh you just want food"/>
-            <ResultsList results={filterResultByPrice(2)} title="you got some taste now"/>
+        <Text style= {styles.text} >We have found {results.length} results</Text>
+        <ScrollView style={styles.scroll} >
+            <ResultsList  results={filterResultByPrice(1)} title="Oh you just want food"/>
+            <ResultsList  results={filterResultByPrice(2)} title="you got some taste now"/>
             <ResultsList results={filterResultByPrice(3)} title="knows elite"/>
             <ResultsList results={filterResultByPrice(4)} title="someone knows what to buy with money"/>
         </ScrollView>
     </>
-};
+}; 
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    text:{
+        fontWeight: 'bold',
+        fontSize:20,
+        padding: 10
+    },
+    scroll:{
+        backgroundColor:'#C0C0C0'
+    }
+});
 export default SearchScreen;

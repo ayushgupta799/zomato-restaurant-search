@@ -7,7 +7,7 @@ export default () => {
 
     const searchApi = async (searchTerm) => {
         try {
-            const response = await zomato.get('/search?entity_id=4&entity_type=city',{
+            const response = await zomato.get(`/search?entity_id=4&entity_type=city`,{
                 params: {
                     count : 20,
                     q : searchTerm
